@@ -1,1 +1,3 @@
-
+echo WIFI:  replaced -Dn180211 with Dwext
+wpa_supplicant -B -iwlan1 -c./mywifi.conf -Dwext -dd
+dhclient wlan1
