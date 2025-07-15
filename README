@@ -1,1 +1,34 @@
-# Embedded_Microprocessor_System_Design_using_FPGAs_ed2
+Embedded_Microprocessor_System_Design_using_FPGAs  2. edition
+
+Here is a brief overview of the new 2/e CD files and the related book chapters.
+============================================================
+* Linux (Chapter 12)
+  -- shell scripts used in the chapter 
+  -- directory gpio for the PETALINUX gpio-demo
+  -- directory ko for the Kernel demo
+  -- directory sql for the MySQL demo
+
+* Python (Chapter 13)
+  -- demo programs used in the chapter
+  -- shell script libpyl.sh to install popular embedded system libs
+  -- shell script runPYall.sh to run all demos
+
+* JavaScript  (Chapter 14)
+  -- HTML, CSS, and JS demos used in the chapter
+  -- Test programs used for Table 14.3 and 14.4
+  -- ES language check scripts ESnode.sh
+  -- Node language support check script NodeDemo.sh
+
+* Java (Chapter 15)
+  -- Java demos used in the chapter (check run with SEprog.sh)
+  -- Test programs used for Table 15.2 and 15.3
+  -- SE language support feature check SEfeature.sh
+  -- SE language support check script SEall.sh
+
+* Videos (All Chapters)
+  -- 46 videos (21 new) from all chapters
+
+===========================================================
+See Embedded_Microprocessor_System_Design_using_FPGAs  1. edition
+directory for HDL files, board ZIP files.
+See the util directory for compiler, font, HDL etc. utilies.
