@@ -1,0 +1,104 @@
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+  <head>  <!-- First HTML part: header -->
+    <meta charset="UTF-8" />   <!-- Popular text file format -->
+    <!-- New features Demo for CSS3. -->
+    <title>CSS3 Demo</title>
+    <style type="text/css">
+      h2 {
+        text-shadow: -4px 4px 6px dimgrey; /* add shadow */
+        font-size: 200%; /* increasing the font size */
+      }
+
+      #round2 {
+        border: 3px solid navy;
+        padding: 5px 20px;
+        background: cyan;
+        width: 200px;
+        text-align: center;
+        border-radius: 50px; /* increasing border-radius */
+      }
+
+      #gradient2 {
+        color: white;
+        width: 180px;
+        height: 75px;
+        padding: 5px;
+        float: left;
+        text-align: center;
+        background: -webkit-radial-gradient(center, yellow, red);
+      }
+
+      #shadow1 {
+        color: white;
+        width: 180px;
+        height: 75px;
+        background-color: blue;
+        box-shadow: 25px 25px 50px dimgrey;
+        float: left;
+        margin-right: 50px;
+      }
+      #shadow2 {
+        color: white;
+        width: 180px;
+        height: 75px;
+        background-color: green;
+        box-shadow: -25px -25px 50px dimgrey;
+        float: left;
+        margin-right: 50px;
+      }
+
+      img {
+        position: relative;
+        animation: movingimage linear 10s 1s 2 alternate;
+      }
+      @keyframes movingimage {
+        0% {
+          opacity: 0;
+          left: 50px;
+          top: 0px;
+        }
+        25% {
+          opacity: 1;
+          left: 0px;
+          top: 50px;
+        }
+        50% {
+          opacity: 0;
+          left: 50px;
+          top: 100px;
+        }
+        75% {
+          opacity: 1;
+          left: 100px;
+          top: 50px;
+        }
+        100% {
+          opacity: 0;
+          left: 50px;
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <!-- ====================================================  -->
+  <body>  <!-- Second HTML part: body -->
+    <table>
+      <td><h2>New CSS3 Feature Demo</h2></td>
+      <td><div id="round2">Increasing the border-radius rounds the corners of a box</div></td>
+    </table>
+
+    <img
+      src="http://www.eng.famu.fsu.edu/~umb/index_files/image005.gif"
+      height="180"
+      alt="Uwe Meyer-Baese"
+    />
+    <div>
+      <div id="shadow1"><h4>Box Shadow Bottom and Right</h4></div>
+      <div id="shadow2"><h4>Box Shadow Top and Left</h4></div>
+      <div id="gradient2"><h4>Radial Gradient Box Background</h4></div>
+    </div>
+
+    <div></div>
+  </body>
+</html>

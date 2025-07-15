@@ -1,0 +1,90 @@
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+  <head>   <!-- First HTML part: header -->
+    <meta http-equiv="content-type" content="text/xml; charset=iso-8859-1" />
+    <title>validate.html</title>
+    <style>
+      h1 {  text-align: center;}
+      fieldset {  width: 40em;  margin-left: auto;  margin-right: auto;}
+      label {  float: left;  width: 10em;  clear: left; }
+      input {  float: left; width: 20em; }
+      button {  display: block;  margin-left: 0;  margin-right: auto;  clear: both;}
+     .textOut { color: black; font-size: large;}
+    </style>
+  </head>
+<!-- ====================================================  -->
+  <body>    <!-- Second HTML part: body -->
+    <h1>Additional new HTML5 &lt;input&gt; elements</h1> 
+  
+    <form action = "">
+      <fieldset>
+        <label>Time</label>
+        <input type = "time" id = "timeID" size="25" value="00:00"/>
+  
+        <label>Date</label>
+        <input type = "date" id = "dateID" size="25" value="1970-01-01"/>
+
+        <label>Red Number </label>
+        <input type = "number" min = "0" max = "255" step = "1" id = "numID" value="128" />
+
+        <label>Red Range 0 ...255 </label>
+        <input type = "range" min = "0" max = "255" step = "1" id = "rID" value="0" />
+      
+        <label>Green Range 0 ...255</label>
+        <input type = "range" min = "0" max = "255" step = "1" id = "gID" value="255" color="red"/>
+
+        <label>Blue Range 0 ...255</label>
+        <input type = "range" min = "0" max = "255" step = "1" id = "bID" value="255" color="red"/>
+        
+
+  
+        <button type = "button" onclick = "useSlider()" id="slideButton">
+          Change Background Color with Slider values
+        </button>
+
+        <label>Color picker</label>
+        <input type = "color" value = "#00FF00" id = "colID" size="25" />
+
+        <button type = "button" onclick = "usePicker()" id="pickButton">
+          Change Background Color with Color picker
+        </button>
+        
+      </fieldset>
+    </form>
+        <p class="textOut"></p>
+    <script type = "text/javascript">
+      document.querySelector("#slideButton").addEventListener("click", useSlider);
+      document.querySelector("#pickButton").addEventListener("click", usePicker);
+
+    function usePicker(event){
+      const colValue = document.querySelector("#colID").value;
+      console.log("Color picker:", colValue)
+      document.body.style.background = colValue;
+      let t = document.querySelector("#timeID").value;
+      let d = document.querySelector("#dateID").value;
+      let result = "Color Change using color picker on Day: " + d + " Time:" + t;
+      document.querySelector(".textOut").innerHTML = result;
+    }
+
+    function useSlider(event){
+      const rValue = parseInt(document.querySelector("#rID").value);
+      const gValue = parseInt(document.querySelector("#gID").value);
+      const bValue = parseInt(document.querySelector("#bID").value);
+      let rHex = rValue.toString(16);
+      let gHex = gValue.toString(16);
+      let bHex = bValue.toString(16);
+      if (rHex.length < 2){rHex = "0" + rHex; }
+      if (gHex.length < 2){gHex = "0" + gHex; }
+      if (bHex.length < 2){bHex = "0" + bHex; }
+      let hexColor = "#" + rHex +  gHex + bHex;
+      console.log("new color:", hexColor)
+      document.body.style.background = hexColor;
+      let t = document.querySelector("#timeID").value;
+      let d = document.querySelector("#dateID").value;
+      let result = "Color Change using slider values on Day: " + d + " Time:" + t;
+      document.querySelector(".textOut").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
+

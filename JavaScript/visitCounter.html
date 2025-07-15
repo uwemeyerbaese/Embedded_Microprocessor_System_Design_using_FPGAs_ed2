@@ -1,0 +1,48 @@
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+  <head>   <!-- First HTML part: header -->
+    <meta charset="UTF-8" />  <!-- UTF-8 most popular text file format -->
+    <title>TB Page</title>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+  </head>
+<!-- -----------------------------------------  -->
+  <body>    <!-- Second HTML part: body -->
+    <h1>TestBench JavaScript</h1>
+  <br>
+  <p class="textOut"> Result =  ?</p>
+  <br>
+    <script>
+      // attach an eventListener for page loading
+      window.addEventListener("load", updateCounter, false);
+
+      function updateCounter() {
+        let result = "<pre>";
+        // try this, but watch for errors
+        try {
+          // Read the local storage values
+          let viewCount = localStorage.getItem("viewCount");
+          let firstVisit = localStorage.getItem("firstVisit");
+          let now = new Date();
+          let localTime = now.toLocaleString();
+
+          if (typeof viewCount !== "string") {
+            viewCount = 0;
+            firstVisit = localTime;
+          }
+
+          viewCount = parseInt(viewCount) + 1;
+          localStorage.setItem("viewCount", viewCount);
+          localStorage.setItem("firstVisit", firstVisit);
+          result += "You have visited this page " + viewCount + " times.\n" +
+            "Your first visit was on " + firstVisit + "\n" +
+            "The local time now is: " + localTime + "\n" +
+            "</pre>";
+        } catch (err) {
+          result = err.message;
+        }
+        // Display the result or error message
+        document.querySelector(".textOut").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

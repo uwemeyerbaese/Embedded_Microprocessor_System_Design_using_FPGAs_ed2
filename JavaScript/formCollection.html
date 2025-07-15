@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+   <style> 
+      table, td, th { border: 1px solid black; padding: 4px; margin-top: 20px; }
+   </style>
+  </head>
+<!-- -----------------------------------------  -->
+  <body>
+    <h3>Gathering User &lt;input/&gt; Information</h3>
+    <table border="1" color="black"><tr>
+      <td>text:   <input type="text" value="Hello"> </td>
+      <td>button: <input type="button" value="Run"> </td>
+      <td>file:   <input type="file"></td>
+    </tr><tr>
+      <td>password:<input type="password"  value="Hallo"> </td>
+      <td>checkbox:<input type="checkbox" checked> </td>
+      <td>
+         <input type="radio" name="user" id="b1">
+         <label for="b1">Radio</label>
+         <input type="radio" name="user" id="b2" checked>
+         <label for="b2">Button</label>
+      </td>
+    </tr><tr>
+      <td>
+      textarea: <br>
+      <textarea>
+        3 line
+        text
+        area
+      </textarea> 
+      </td><td>
+      select: <br>
+      <select>
+      <option>Drop</option>
+      <option>box</option>
+      <option>List</option>
+      </select>
+      </td><td>
+      select + size: <br>
+      <select size="3">
+        <option>size 3</option>
+        <option>List</option>
+        <option>Box</option>
+      </select>
+      </td>
+    </tr>
+    </table>
+  </body>
+</html>
+

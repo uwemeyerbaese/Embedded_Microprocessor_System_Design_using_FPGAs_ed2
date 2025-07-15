@@ -1,0 +1,19 @@
+/* background color light-blue */
+body{ 
+  background-color: cyan; 
+}
+/* Headline underline */
+h1 {
+  text-decoration: underline;
+}
+/* RUN button in magenta */
+#runButton {
+  background-color: magenta;
+  color: black;
+  font-weight: bold;
+}
+/* Font and color for result */
+.textOut {
+  color: red;
+  font-size: large;
+}

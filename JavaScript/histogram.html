@@ -1,0 +1,20 @@
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+  <head>   <!-- First HTML part: header -->
+    <meta charset="UTF-8" />   <!-- UTF-8 most popular text file format -->
+    <title>Histogram Demo</title>
+    <script src="histogram.js" defer></script>
+    <style>   /* Fonts and Colors specified in CSS stylesheet */
+      body { margin: 20px auto; font-family: 'Lato';
+             font-weight: 300; text-align: center; }
+      #pie-chart { margin: 0 auto; height: 450px; }
+    </style>
+   <script src='https://cdn.plot.ly/plotly-latest.min.js'> </script>
+  </head>
+  <body>   <!-- Second HTML part: body -->
+    <h3>Histogram Demo</h3><br>
+    <button id="run_button" onclick="histPlot(this)">Run</button>
+    <div id="histogram-chart"></div>
+  </body>
+</html>
+

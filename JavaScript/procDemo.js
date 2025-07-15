@@ -1,0 +1,11 @@
+"use strict";
+//var process = require('process');
+//var console = require('console');
+console.log('=== Test the builtin process library ===');
+console.log('arch =', process.arch);
+console.log('cwd() =', process.cwd());
+console.log('platform =', process.platform);
+console.log('release =', process.release);
+console.log('uptime() =', process.uptime()); 
+console.log('version =', process.version);
+console.log('versions =', process.versions);

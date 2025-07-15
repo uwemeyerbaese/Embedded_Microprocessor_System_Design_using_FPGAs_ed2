@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+  <head>   <!-- First HTML part: header -->
+    <meta charset="UTF-8" />  <!-- Popular text file format -->
+    <title>TestBench JavaScript Page</title>
+    <link rel="stylesheet" type="text/css" href="movStyle.css">
+  </head>
+<!-- ====================================================  -->
+  <body>    <!-- Second HTML part: body -->
+    <table>
+      <th><button id="playbackController">Play</button> </th>
+      <th><button id="muteController">Mute</button> </th>
+    </table>
+    <video control id="bbbVideo">
+      <source src="Train.mov" />
+    </video>
+    <script>
+      function pauseHandler(e) {
+        playButton.innerHTML = "Resume";
+      }
+
+      function playingHandler(e) {
+        playButton.innerHTML = "Pause";
+      }
+
+      function volumechangeHandler(e) {
+        muteButton.innerHTML = video.muted ? "Unmute" : "Mute";
+      }
+
+      function playbackClick(e) {
+        video.paused ? video.play() : video.pause();
+      }
+
+      function muteClick(e) {
+        video.muted = !video.muted;
+      }
+
+      var video = document.querySelector("#bbbVideo");
+      var playButton = document.querySelector("#playbackController");
+      var muteButton = document.querySelector("#muteController");
+
+      video.addEventListener("pause", pauseHandler);
+      video.addEventListener("playing", playingHandler);
+      video.addEventListener("volumechange", volumechangeHandler);
+
+      playButton.addEventListener("click", playbackClick);
+      muteButton.addEventListener("click", muteClick);
+    </script>
+  </body>
+</html>

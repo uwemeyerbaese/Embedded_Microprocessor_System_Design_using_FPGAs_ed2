@@ -1,0 +1,92 @@
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+<head>     <!-- First HTML part: header -->
+  <meta charset="UTF-8">   <!-- Popular text file format -->
+  <title>Locate Me on Map</title>
+  <style>
+  body { font-family: sans-serif; font-size: 0.8rem;}
+  .container {    display: table;    float: left;}
+  button {background-color: magenta}
+  .container, #map {    margin: 1.5em;    padding: 0;}
+  #map {    border: thin solid #999999;    float: left;    height: 250px;
+  width: 250px;    margin: 0px;    padding: 0px;}
+  </style>
+</head>
+<!DOCTYPE html>  <!-- Language version used: HTML5 -->
+<html>
+<head>     <!-- First HTML part: header -->
+  <meta charset="UTF-8">   <!-- Popular text file format -->
+  <title>Locate Me on Map</title>
+  <style>
+  body { font-family: sans-serif; font-size: 0.8rem;}
+  .container {    display: table;    float: left;}
+  button {background-color: magenta}
+  .container, #map {    margin: 1.5em;    padding: 0;}
+  #map {    border: thin solid #999999;    float: left;    height: 250px;
+  width: 250px;    margin: 0px;    padding: 0px;}
+  </style>
+</head>
+<!-- ====================================================  -->
+  <body>    <!-- Second HTML part: body -->
+    <div class="container">
+      <div>
+        <button onclick="runApp()">Click here to locate me</button>
+      </div>
+    <h2>Your Location Data:</h2>
+    <h3>
+    <table border="1">
+      <tr>
+        <td><b>Latitude:</b></td>
+        <td><label id="y" type="text" size= 18> 0.0 </label></td>
+      </tr>
+      <tr>
+        <td><b>Longitude:</b></td>
+        <td><label id="x" type="text" size= 12> 0.0 </label></td>
+      </tr>
+      <tr>
+        <td><b>Accuracy:</b></td>
+        <td><label id="accuracy" type="text" size= 12> 0.0 </label></td>
+      </tr>
+      <tr>
+        <td><b>Time Stamp:</b></td>
+        <td><label id="timestamp" type="text" size= 12> 0 </label></td>
+      </tr>
+    </table>
+    </h3>
+
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+      function runApp() {
+        function displayLocation(position) {
+          document.querySelector("#y").innerHTML = position.coords.latitude;
+          document.querySelector("#x").innerHTML = position.coords.longitude;
+          document.querySelector("#accuracy").innerHTML = position.coords.accuracy;
+          document.querySelector("#timestamp").innerHTML = position.timestamp;
+          const zoomLevel = { zoom: 5};
+          const mp = new google.maps.Map(
+            document.querySelector("#map"), zoomLevel
+          );
+          const pstn = new google.maps.LatLng(
+            position.coords.latitude, position.coords.longitude
+          );
+          const nfwndw = new google.maps.InfoWindow({
+            map: mp,
+            position: pstn,
+            content: "Your Location",
+          });
+          mp.setCenter(pstn);
+        }
+        function showError(error) {
+          alert( "User refuses location access");
+        }
+        if  (typeof navigator.geolocation != "undefined") {
+          navigator.geolocation.getCurrentPosition( displayLocation, showError);
+        } else {
+          alert( "This page uses geolocation, but your browser doesn't support it." );
+        }
+      }
+    </script>
+  </body>
+</html>
