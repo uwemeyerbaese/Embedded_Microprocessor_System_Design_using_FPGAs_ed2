@@ -6,22 +6,22 @@ password
 password
 ENDA
 useradd -d/home/bob   -g students -m -s/bin/dash bob
-passwd alice <<ENDB
+passwd bob <<ENDB
 temppwd
 temppwd
 ENDB
 useradd -d/home/carol -g students -m -s/bin/bash carol
-passwd alice <<ENDC
+passwd carol <<ENDC
 carol234
 carol234
 ENDC
 useradd -d/home/dave  -g students -m -s/bin/sh dave
-passwd alice <<ENDD
+passwd dave <<ENDD
 DavE3#
 DavE3#
 ENDD
 useradd -d/home/eve   -g students -m -s/bin/dash eve
-passwd alice <<ENDE
+passwd eve <<ENDE
 xu9Kv@W&^fHhH
 xu9Kv@W&^fHhH
 ENDE
